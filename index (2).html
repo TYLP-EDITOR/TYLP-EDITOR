@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cal edits | portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { background: #261b1d; }
+
+    /* Caixa que segura a imagem e os vídeos por cima */
+    .pagina {
+      width: 100%;
+      overflow: hidden;      /* corta as laterais (a sangria) */
+      line-height: 0;
+    }
+
+    /* Versão PC: a imagem fica maior que a tela e centralizada na coluna branca,
+       então as laterais escuras/vermelhas são cortadas como no seu recorte. */
+    .tela {
+      position: relative;
+      width: 155.63%;
+      margin-left: -25.21%;
+    }
+
+    .tela img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Vídeos: posição em % em relação à imagem (versão PC) */
+    .video {
+      position: absolute;
+      border: 0;
+    }
+    .video.v1 { left: 35.322%; top: 35.28%;  width: 24.799%; height: 16.224%; }
+    .video.v2 { left: 35.322%; top: 55.575%; width: 24.799%; height: 16.224%; }
+
+    /* Versão celular */
+    @media (max-width: 768px) {
+      .tela { width: 100%; margin-left: 0; }
+      .video.v1 { left: 10.552%; top: 41.013%; width: 78.654%; height: 17.6%; }
+      .video.v2 { left: 9.915%;  top: 62.35%;  width: 78.684%; height: 17.6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pagina">
+    <div class="tela">
+    <picture>
+      <source media="(max-width: 768px)" srcset="mobile.webp">
+      <img src="pc.webp" alt="Portfolio de Cal Edits (TYLP), editor de vídeo">
+    </picture>
+
+    <!-- TROQUE ID_DO_VIDEO_1 e ID_DO_VIDEO_2 pelos IDs dos seus vídeos do YouTube -->
+    <iframe class="video v1"
+      src="https://www.youtube.com/embed/ID_DO_VIDEO_1"
+      title="Exemplo 1" loading="lazy" allowfullscreen></iframe>
+
+    <iframe class="video v2"
+      src="https://www.youtube.com/embed/ID_DO_VIDEO_2"
+      title="Exemplo 2" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</body>
+</html>
