@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cal edits | portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    body { background: #261b1d; }
+
+    /* Caixa que segura a imagem e os vídeos por cima */
+    .pagina {
+      position: relative;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .pagina img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Vídeos: posição em % em relação à imagem (versão PC) */
+    .video {
+      position: absolute;
+      border: 0;
+    }
+    .video.v1 { left: 35.322%; top: 35.28%;  width: 24.799%; height: 16.224%; }
+    .video.v2 { left: 35.322%; top: 55.575%; width: 24.799%; height: 16.224%; }
+
+    /* Versão celular */
+    @media (max-width: 768px) {
+      .video.v1 { left: 10.552%; top: 41.013%; width: 78.654%; height: 17.6%; }
+      .video.v2 { left: 9.915%;  top: 62.35%;  width: 78.684%; height: 17.6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pagina">
+    <picture>
+      <source media="(max-width: 768px)" srcset="mobile.webp">
+      <img src="pc.webp" alt="Portfolio de Cal Edits (TYLP), editor de vídeo">
+    </picture>
+
+    <!-- TROQUE ID_DO_VIDEO_1 e ID_DO_VIDEO_2 pelos IDs dos seus vídeos do YouTube -->
+    <iframe class="video v1"
+      src="https://www.youtube.com/embed/ID_DO_VIDEO_1"
+      title="Exemplo 1" loading="lazy" allowfullscreen></iframe>
+
+    <iframe class="video v2"
+      src="https://www.youtube.com/embed/ID_DO_VIDEO_2"
+      title="Exemplo 2" loading="lazy" allowfullscreen></iframe>
+  </div>
+
+</body>
+</html>
